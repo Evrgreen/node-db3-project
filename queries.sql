@@ -26,3 +26,23 @@ WHERE strftime('%Y-%m-%d',OrderDate) < strftime('2012-11-9')
     Join Employee
     On [Order].EmployeeId = Employee.Id
     ORDER BY Shipname
+
+
+------Stretch --------- 
+
+
+---Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 8 records.
+SELECT CategoryName as Category,COUNT(*) "Product Count"
+FROM  Categories c
+JOIN Products p 
+ON c.CategoryID = p.CategoryID
+GROUP BY CategoryName
+
+
+---Display OrderID and a column called ItemCount that shows the total number of products placed on the order. Shows 196 records.
+
+SELECT OrderID as "Order", COUNT(*) ItemCount
+FROM [OrderDetails] o
+join Products p
+ON o.ProductID = p.ProductID
+GROUP BY OrderID
