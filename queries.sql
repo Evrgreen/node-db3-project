@@ -22,7 +22,7 @@ WHERE strftime('%Y-%m-%d',OrderDate) < strftime('2012-11-9')
 
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
     
-    Select Id,Shipname,LastName from [Order]
+    Select Id as 'Order Number',Shipname as 'Company',LastName as 'Employee Last Name' from [Order]
     Join Employee
     On [Order].EmployeeId = Employee.Id
     ORDER BY Shipname
